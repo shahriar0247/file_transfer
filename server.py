@@ -271,8 +271,10 @@ def start_client(ip, port):
         get_files(sock, share_folder)
         time.sleep(1 / 100)
 
-
+# the the port of the server (port of client on another computer)
 threading.Thread(target=start_server, args=["0.0.0.0", 55664]).start()
+
+# the ip of the other computer and port of client (port of server on another computer)
 threading.Thread(target=start_client, args=["3.1.5.105", 55665]).start()
 
 
